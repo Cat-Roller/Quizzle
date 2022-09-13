@@ -1,10 +1,14 @@
 import React from "react";
 import "./style.css"
+import Quiz from "./components/Game";
+import StartingPage from "./components/StartPage";
 
 export default function App(){
+    const [startQuiz, setStartQuiz] = React.useState(false)
     return(
         <div>
-            <h1 className="test">hello</h1>
+        {// startGame ? <Quiz/> : <StartingPage/>
+        }
         </div>
     )
 }
