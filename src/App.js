@@ -7,8 +7,7 @@ export default function App(){
     const [startQuiz, setStartQuiz] = React.useState(false)
     return(
         <div>
-        {// startGame ? <Quiz/> : <StartingPage/>
-        }
+         {startQuiz ? <Quiz/> : <StartingPage setStartQuiz={setStartQuiz}/>}
         </div>
     )
 }

@@ -2,3 +2,60 @@
     color: red;
     border: solid red 19px;
 }
+
+*{
+    font-family: 'Karla', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    width: 400px;
+    height: 400px;
+}
+.StartPage{
+    background-color: #F5F7FB;
+    width: 450px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.startText{
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.startTitle{
+    margin-top: 90px;
+    margin-bottom: 10px;
+}
+
+.StartButton{
+    margin-top: 3px;
+    padding: 10px 25px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: #4D5B9E;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.yellowBubble{
+height: 60px;
+width: 60px;
+border-radius: 50%;
+background-color: lemonchiffon;
+margin-left: auto;
+}
+
+.blueBubble{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-color: rgb(131, 141, 171);
+    margin-right: auto;
+    margin-top: auto;
+}
+
