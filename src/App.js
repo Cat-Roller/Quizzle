@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css"
-import Question from "./components/Question";
+import QuestionList from "./components/QuestionList";
 import StartingPage from "./components/StartPage";
 
 export default function App(){
@@ -8,9 +8,7 @@ export default function App(){
     return(
         <div  className="Base">   
          <div className="yellowBubble"></div>
-         {startQuiz ? <Question question="How to say goodbye in Spanish?"
-         answer2="Hola" answer1="Adios" 
-         answer3="Au Revoir" answer4="Salir" /> 
+         {startQuiz ? <QuestionList /> 
          : <StartingPage setStartQuiz={setStartQuiz}/>}
          <div className="blueBubble"></div>
         </div>

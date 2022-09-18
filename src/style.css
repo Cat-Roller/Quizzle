@@ -13,16 +13,17 @@ body{
 }
 .Base{
     background-color: #F5F7FB;
-    width: 450px;
-    height: 400px;
+    width: 550px;
+    height: 550px;
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    position: relative;
 }
 
 .StartMenu
 {
+    margin-top: 18%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,11 +31,15 @@ body{
 .startText{
     margin-top: 0px;
     margin-bottom: 10px;
+    color: #293264;
+    font-size: 15px;
 }
 
 .startTitle{
     margin-top: 90px;
     margin-bottom: 10px;
+    font-size: 35px;
+    color: #293264;
 }
 
 .StartButton{
@@ -44,25 +49,28 @@ body{
     border: none;
     color: white;
     background-color: #4D5B9E;
-    font-size: 10px;
+    font-size: 14px;
     cursor: pointer;
+    font-weight: 300;
 }
 
 .yellowBubble{
-height: 60px;
-width: 60px;
+height: 70px;
+width: 70px;
 border-radius: 50%;
 background-color: lemonchiffon;
-margin-left: auto;
+right: 0px;
+position: absolute;
 }
 
 .blueBubble{
     height: 80px;
     width: 80px;
     border-radius: 50%;
-    background-color: rgb(131, 141, 171);
-    margin-right: auto;
-    margin-top: auto;
+    background-color: rgb(159, 174, 219);
+    bottom: 0px;
+    left: 0px;
+    position: absolute;
 }
 
 .answer{
@@ -75,16 +83,16 @@ margin-left: auto;
     margin-right: 10px;
     width: 80px;
     height: 25px;
+    cursor: pointer;
 }
 
 .ask{
     margin-bottom: 10px;
-    margin-left: 12px;
     color: #4D5B9E;
 }
 
 .solidHr{
-    background-color: rgb(144, 144, 144);
+    background-color: rgb(230, 230, 230);
     border-style: solid;
-    border-color: rgb(206, 206, 206);
+    border-color: rgb(229, 229, 229);
 }
