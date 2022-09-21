@@ -5,6 +5,7 @@ import StartingPage from "./components/StartPage";
 
 export default function App(){
     const [startQuiz, setStartQuiz] = React.useState(false)
+
     return(
         <div  className="Base">   
          <div className="yellowBubble"></div>

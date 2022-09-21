@@ -13,8 +13,8 @@ body{
 }
 .Base{
     background-color: #F5F7FB;
-    width: 550px;
-    height: 550px;
+    width: 650px;
+    height: 620px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -81,7 +81,7 @@ position: absolute;
     border-color: #4D5B9E;
     border-radius: 10px;
     margin-right: 10px;
-    width: 80px;
+    width: auto;
     height: 25px;
     cursor: pointer;
 }
@@ -89,10 +89,29 @@ position: absolute;
 .ask{
     margin-bottom: 10px;
     color: #4D5B9E;
+    max-width: 400px;
 }
 
 .solidHr{
     background-color: rgb(230, 230, 230);
     border-style: solid;
     border-color: rgb(229, 229, 229);
+    width: 530px;
+}
+
+.QuestionList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Replay{
+    height: 35px;
+    width: 110px;
+    border-color: #4D5B9E;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
+    background-color: #4D5B9E;
+    color: white;
 }
