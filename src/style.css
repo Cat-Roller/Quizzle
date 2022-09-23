@@ -114,4 +114,5 @@ position: absolute;
     border-radius: 10px;
     background-color: #4D5B9E;
     color: white;
+    cursor: pointer;
 }
