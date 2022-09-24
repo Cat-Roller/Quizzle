@@ -10,7 +10,14 @@ export default function QuestionList()
                   .then(res => res.json())
                   .then(data =>setQuestions(data.results))
           }, [])
-                      
+           const [rigthAnswerIndex,setRightAnswerIndex] = React.useState([0,0,0,0,0])
+      React.useEffect(()=>
+      setRightAnswerIndex(
+        [Math.floor(Math.random() * 4),Math.floor(Math.random() * 4),
+          Math.floor(Math.random() * 4),Math.floor(Math.random() * 4),
+          Math.floor(Math.random() * 4)]),[QuestionList])
+          console.log(rigthAnswerIndex)
+          let count =0
         const List =  questions.map(question => <Question question={question.question} 
               answers={[
               question.correct_answer,
@@ -19,13 +26,12 @@ export default function QuestionList()
               question.incorrect_answers[2]]}
               key={question.question}
               id={question.question}
-              rigthAnswerId={Math.floor(Math.random() * 4)}
+              rigthAnswerId={rigthAnswerIndex[0]}
               />) 
 
              function endGame()
              {
               const rightAnswers=0
-              console.log(List[0])
               setEndQuiz(true)
              }
         
