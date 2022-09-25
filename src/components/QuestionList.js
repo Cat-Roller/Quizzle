@@ -1,10 +1,12 @@
 import React from "react";
 import Question from "./Question.js"
 
-export default function QuestionList()
+export default function QuestionList(props)
 {
-       const [questions, setQuestions] =React.useState([])
+      const [questions, setQuestions] =React.useState([])
       const [endQuiz,setEndQuiz] = React.useState(false)
+      const [poinst, setPoints] = React.useState(0)
+      const [pickedAnswers, setPickedAnswers]= React.useState([-1,-1,-1,-1,-1])
       React.useEffect(() => {
               fetch("https://opentdb.com/api.php?amount=5&category=9&difficulty=easy&type=multiple")
                   .then(res => res.json())
@@ -16,8 +18,8 @@ export default function QuestionList()
         [Math.floor(Math.random() * 4),Math.floor(Math.random() * 4),
           Math.floor(Math.random() * 4),Math.floor(Math.random() * 4),
           Math.floor(Math.random() * 4)]),[QuestionList])
-          console.log(rigthAnswerIndex)
           let count =0
+
         const List =  questions.map(question => <Question question={question.question} 
               answers={[
               question.correct_answer,
@@ -25,21 +27,39 @@ export default function QuestionList()
               question.incorrect_answers[1],
               question.incorrect_answers[2]]}
               key={question.question}
-              id={question.question}
-              rigthAnswerId={rigthAnswerIndex[0]}
+              id={count}
+              rigthAnswerId={rigthAnswerIndex[count++]}
+              pickAnswer={pickAnswer}
+              pickedAnswers={pickedAnswers}
               />) 
-
+             function pickAnswer(questionId, answerId){
+              setPickedAnswers(answers => {return [
+                ...answers.slice(0,questionId),
+                answers[questionId]=answerId,
+                 ...answers.slice(questionId+1) ]})
+              console.log(pickedAnswers)
+             }
              function endGame()
              {
-              const rightAnswers=0
+              for (let i = 0; i < 5; i++) {
+                if(rigthAnswerIndex[i]===pickedAnswers[i])
+                {
+                  setPoints(score => score+1)
+                }     
+              }
               setEndQuiz(true)
              }
         
+             function restartGame()
+             {
+              props.gameStarted(false)
+             }
   return(
     
       <div className="QuestionList">
         {List}
-        {endQuiz ? <button className="Replay">Replay</button> 
+        {endQuiz ? <div> <span className="rightMargin">You answered {poinst} questions right</span>
+        <button className="Replay" onClick={restartGame}>Replay</button></div>
         : <button className="Replay" onClick={endGame}>See Result</button>}
       </div>
 

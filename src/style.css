@@ -116,3 +116,7 @@ position: absolute;
     color: white;
     cursor: pointer;
 }
+
+.rightMargin{
+    margin-right: 20px;
+}

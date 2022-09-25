@@ -10,10 +10,23 @@ export default function Question(props)
         <div className="question">
             <h4 className="ask">{props.question}</h4>
             <div className="answers">
-                <button className="answer">{props.answers[0]}</button>
-                <button className="answer">{props.answers[1]}</button>
-                <button className="answer">{props.answers[2]}</button>
-                <button className="answer">{props.answers[3]}</button>
+
+                <button className="answer" id={0} 
+                onClick={() => props.pickAnswer(props.id, 0)}
+                >{props.answers[0]}</button>
+
+                <button className="answer" id={1}
+                 onClick={() => props.pickAnswer(props.id, 1)}
+                 >{props.answers[1]}</button>
+
+                <button className="answer" id={2}
+                 onClick={() => props.pickAnswer(props.id, 2)}
+                 >{props.answers[2]}</button>
+
+                <button className="answer" id={3}
+                 onClick={() => props.pickAnswer(props.id, 3)}
+                 >{props.answers[3]}</button>
+
             </div>
             <hr className="solidHr"/>
         </div>

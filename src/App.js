@@ -9,7 +9,7 @@ export default function App(){
     return(
         <div  className="Base">   
          <div className="yellowBubble"></div>
-         {startQuiz ? <QuestionList /> 
+         {startQuiz ? <QuestionList gameStarted={setStartQuiz}/> 
          : <StartingPage setStartQuiz={setStartQuiz}/>}
          <div className="blueBubble"></div>
         </div>
