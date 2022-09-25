@@ -31,14 +31,17 @@ export default function QuestionList(props)
               rigthAnswerId={rigthAnswerIndex[count++]}
               pickAnswer={pickAnswer}
               pickedAnswers={pickedAnswers}
+              endQuiz={endQuiz}
               />) 
-             function pickAnswer(questionId, answerId){
-              setPickedAnswers(answers => {return [
-                ...answers.slice(0,questionId),
-                answers[questionId]=answerId,
-                 ...answers.slice(questionId+1) ]})
-              console.log(pickedAnswers)
-             }
+             function pickAnswer(questionId, answerId, endQuiz){
+              if (!endQuiz) {
+                {setPickedAnswers(answers => {return [
+                  ...answers.slice(0,questionId),
+                  answers[questionId]=answerId,
+                   ...answers.slice(questionId+1) ]})}
+                }  
+              }
+              
              function endGame()
              {
               for (let i = 0; i < 5; i++) {
